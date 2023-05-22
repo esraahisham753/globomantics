@@ -2,16 +2,18 @@ import './house.css';
 
 const House = ({house}) => {
     return ( 
-        <div className='row house'>
-            <div className='row house-country'>
-                <h4>{house.country}</h4>
-            </div>
-            <div className='row address'>
-                <h2>{house.address}</h2>
-            </div>
+        <div className='row house'>   
+            <h4 className="house-country">{house.country}</h4>
+            <h2 className="address">{house.address}</h2>
             <div className='row'>
                 <div className='col-6 image'>
-                    <img />
+                    <img src={house.photo}/>
+                </div>
+                <div className="col-6 details">
+                    <h4 className="price">${house.price}</h4>
+                    <p className="disc">
+                        {house.discription}
+                    </p>
                 </div>
             </div>
         </div>

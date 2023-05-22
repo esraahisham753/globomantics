@@ -7,9 +7,16 @@
 }
 
 .title h1 {
-  color: #F266AB;
+  color: #f266acaf;
   font-weight: 700;
   font-size: 35px;
   font-style: italic;
   font-family: cursive;
+}
+
+.heading{
+  width: 100%;
+  background-color: #f266acaf;
+  color: #27374D;
+  font-family: “Gill Sans”, “Gill Sans MT”, Calibri, sans-serif;;
 }

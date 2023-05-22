@@ -1,0 +1,28 @@
+.house{
+    font-family: "Gill Sans", sans-serif;
+}
+
+.house-country{
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.address{
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.image{
+    width: 500px;
+    height: 500px;
+}
+
+.price{
+    font-size: 30px;
+    font-weight: 400;
+    color: #f266acaf;
+}
+
+.disc{
+    font-size: 15px;
+}
