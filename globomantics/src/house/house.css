@@ -1,5 +1,6 @@
 .house{
     font-family: "Gill Sans", sans-serif;
+    margin-top: 2%;
 }
 
 .house-country{
@@ -12,9 +13,8 @@
     font-weight: 500;
 }
 
-.image{
-    width: 500px;
-    height: 500px;
+.image img{
+    width: 100%;
 }
 
 .price{
@@ -24,5 +24,5 @@
 }
 
 .disc{
-    font-size: 15px;
+    font-size: 20px;
 }

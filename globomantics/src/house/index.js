@@ -12,7 +12,7 @@ const House = ({house}) => {
                 <div className="col-6 details">
                     <h4 className="price">${house.price}</h4>
                     <p className="disc">
-                        {house.discription}
+                        {house.description}
                     </p>
                 </div>
             </div>
