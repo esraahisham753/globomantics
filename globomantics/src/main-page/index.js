@@ -4,6 +4,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import './main-page.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 import Header from './Header';
 import FeaturedHouse from './FeaturedHouse';
 

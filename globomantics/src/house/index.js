@@ -7,7 +7,7 @@ const House = ({house}) => {
             <h2 className="address">{house.address}</h2>
             <div className='row'>
                 <div className='col-6 image'>
-                    <img src={house.photo}/>
+                    <img alt="house" src={`/images/${house.photo}.jpeg`}/>
                 </div>
                 <div className="col-6 details">
                     <h4 className="price">${house.price}</h4>
