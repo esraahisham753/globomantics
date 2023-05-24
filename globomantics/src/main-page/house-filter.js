@@ -2,7 +2,7 @@ import {useHistory} from 'react-router-dom';
 
 const HouseFilter = ({allHouses}) => {
     const history = useHistory();
-    const countries = allHouses ? Array.from(new set(allHouses.map((house) => house.country))) : [];
+    const countries = allHouses ? Array.from(new Set(allHouses.map((house) => house.country))) : [];
     countries.unshift(null);
 
     const onSearchChange = (e) => {
@@ -18,9 +18,10 @@ const HouseFilter = ({allHouses}) => {
             <div className="col-md-4 mb-3">
                 <select className="form-select" onChange={onSearchChange}>
                     {
-                        countries.map((c) => {
+                        countries.map((c) => (
                             <option key={c} value={c}>{c}</option>
-                        })
+                        )
+                        )
                     }
                 </select>
             </div>
