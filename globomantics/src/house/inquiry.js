@@ -7,12 +7,13 @@ const Inquiry = () => {
         remarks: "",
     });
 
-    const onChange = () => {
-
+    const onChange = (e) => {
+        setContactInfo({...contactInfo, [e.target.id]: e.target.value,})
     };
 
-    const onSubmit = () => {
-
+    const onSubmit = (e) => {
+        e.preventDefault();
+        console.log(contactInfo);
     };
 
     return ( 
@@ -35,8 +36,28 @@ const Inquiry = () => {
                 id="email"
                 placeholder="Type your email here"
                 className="form-control"
+                onChange={onChange}
+                value={contactInfo.email}
                 />
             </div>
+            <div className="form-group">
+                <label htmlFor="remarks">Remarks</label>
+                <input
+                type="text"
+                id="remarks"
+                placeholder="Type remarks here"
+                className="form-control"
+                onChange={onChange}
+                value={contactInfo.remarks}
+                 />
+            </div>
+            <button
+            className="btn btn-primary mt-2"
+            disabled={!contactInfo.name || !contactInfo.email}
+            onClick={onSubmit}
+            >
+                Submit
+            </button>
         </form>
      );
 }

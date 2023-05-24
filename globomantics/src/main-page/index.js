@@ -1,4 +1,4 @@
-import {useEffect, useState, useMemo} from 'react';
+import {useEffect, useState, useMemo, useCallback} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 
 import './main-page.css';
@@ -14,15 +14,17 @@ import HouseFromQuery from '../house/house-from-query';
 function App() {
   const [houses, setHouses] = useState([]);
 
-  useEffect(() => {
-    console.log("in hook");
-    const fetchHouses = async () => {
+  const fetchHouses = useCallback(
+    async () => {
       const resp = await fetch("/houses.json");
       const respHouses = await resp.json();
       setHouses(respHouses);
-    };
+    }
+  , []);
+
+  useEffect(() => {
     fetchHouses();
-  }, []);
+  }, [fetchHouses]);
 
   const featuredHouse = useMemo(() => {
       if(houses.length) {
@@ -30,11 +32,12 @@ function App() {
         return houses[randomIndex];
       }
   }, [houses]);
-
+  
+  const header = <Header title="Providing houses all over the world" />;
   return (
     <Router>
       <div className="container">
-        <Header title="Providing houses all over the world" />
+        {header}
         <HouseFilter allHouses={houses} />
         <Switch>
           <Route path="/searchresults/:country">
